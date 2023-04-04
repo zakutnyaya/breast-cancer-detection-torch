@@ -20,9 +20,9 @@ RUN poetry config virtualenvs.create false
 ADD pyproject.toml poetry.lock /app/
 RUN poetry install --no-root --only main && rm -rf ~/.cache
 
-RUN conda install pytorch==1.11.0 torchvision==0.12.0 pytorch-cuda -c pytorch -c nvidia
+RUN conda install pytorch==1.11.0 torchmetrics torchvision==0.12.0 pytorch-cuda -c pytorch -c nvidia
 RUN git clone https://github.com/ultralytics/yolov5.git
-RUN pip install timm psutil matplotlib seaborn wandb torchmetrics
+RUN pip install matplotlib seaborn
 
 ADD . /app/
 ENV PYTHONPATH /app/
