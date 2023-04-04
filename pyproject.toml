@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "breast-cancer"
+version = "0.1.0"
+description = ""
+authors = ["Anna Zakutniaia"]
+readme = "README.md"
+packages = [{include = "breast_cancer"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+opencv-python = "^4.5.4"
+numpy = "^1.21.6"
+pandas = "^1.3.5"
+dicomsdl = "^0.109.1"
+pylibjpeg = "^1.4.0"
+albumentations = "^1.3.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

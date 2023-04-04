@@ -1,0 +1,7 @@
+names:
+- breast-roi
+nc: 1
+path: /kaggle/working/2023-01-18-yolo-breast-rois-640-with-bckgr
+test: null
+train: train/images
+val: val/images
