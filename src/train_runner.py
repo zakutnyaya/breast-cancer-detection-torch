@@ -493,8 +493,8 @@ def main():
     arg("--best_threshold", type=float, default=0, help="Threshold to validate best model on the test set")
     arg("--use_wandb", type=bool, default=False, help="If use wandb for experiments logging")
     arg("--api", type=str, default="", help="wandb API key")
-    arg("--project", type=bool, default="Breast Cancer Baseline", help="wandb project name")
-    arg("--entity", type=bool, default="", help="wandb entity name")
+    arg("--project", type=str, default="Breast Cancer Baseline", help="wandb project name")
+    arg("--entity", type=str, default="", help="wandb entity name")
     args = parser.parse_args()
 
     seed_everything(args.seed)
