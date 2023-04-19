@@ -14,7 +14,7 @@ RUN wget \
 
 WORKDIR /app
 
-RUN pip install "poetry>=1.4.1"
+RUN pip install "poetry>=1.0.1"
 RUN poetry config virtualenvs.create false
 
 ADD pyproject.toml poetry.lock /app/

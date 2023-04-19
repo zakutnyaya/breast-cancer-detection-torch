@@ -1,10 +1,10 @@
-IMAGE={breast-cancer-detection}
+IMAGE=zakutniaia/cancer-detection-training
 
 build:
-	DOCKER_BUILDKIT=1 docker build .
+	DOCKER_BUILDKIT=1 docker build -t ${IMAGE} ./
 
 upload:
 	docker push ${IMAGE}
 
 run:
-	docker run --rm -it -p 8050:8050 -t ${IMAGE}
+	docker run --rm -ti --platform linux/amd64 ${IMAGE}
