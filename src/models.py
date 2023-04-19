@@ -1,5 +1,5 @@
-import torch
 import timm
+import torch
 
 
 class CNN(torch.nn.Module):

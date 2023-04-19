@@ -1,8 +1,11 @@
 import argparse
+from typing import List
 import numpy as np
 import pandas as pd
 from sklearn.model_selection import GroupShuffleSplit
+
 from config import TRAIN_DATA, PROCESSED_DATA_DIR
+
 
 
 def split(

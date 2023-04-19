@@ -3,36 +3,30 @@
 Training and validating models
 
 """
-import os
-import wandb
-import copy
-import collections
 import argparse
+import collections
+import copy
+import os
 import pickle
-import pandas as pd
-import numpy as np
 from pathlib import Path
-from tqdm import trange, tqdm
 from time import time
-from typing import Tuple, List
+from typing import List, Tuple
 
-from sklearn.metrics import roc_auc_score
-
+import numpy as np
+import pandas as pd
 import torch
+from sklearn.metrics import roc_auc_score
 from torch import nn, optim
 from torch.utils.data import DataLoader
+from tqdm import tqdm, trange
+import wandb
 
+from config import CLASSIFICATION_WEIGHTS_DIR
 from dataset import BreastROIDataset
-from models import CNN
 from losses import FocalLoss
 from metric import pfbeta
-
-from utils import (
-    save_model,
-    seed_everything,
-    get_scheduler
-)
-from config import CLASSIFICATION_WEIGHTS_DIR
+from models import CNN
+from utils import get_scheduler, save_model, seed_everything
 
 
 def train(
