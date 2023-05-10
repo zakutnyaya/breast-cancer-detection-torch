@@ -7,7 +7,6 @@ from sklearn.model_selection import GroupShuffleSplit
 from config import TRAIN_DATA, PROCESSED_DATA_DIR
 
 
-
 def split(
     X: pd.DataFrame,
     y: pd.DataFrame,

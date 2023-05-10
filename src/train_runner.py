@@ -262,8 +262,8 @@ def generate_predictions(
     debug: bool
 ) -> None:
     """
-    Loads model weights the epoch checkpoints, 
-    calculates val predictions for and saves them to pickle
+    Loads model weights, calculates val predictions
+    for the epoch checkpoints and saves them to pickle
 
     Args:
         weights_dir: directory where run was saved
