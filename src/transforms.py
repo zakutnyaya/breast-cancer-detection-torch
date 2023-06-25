@@ -67,7 +67,6 @@ class TransformCfg:
             ),
             A.RandomGamma(p=0.3),
             A.RandomBrightnessContrast(p=0.5),
-            A.Resize(128, 128),  # del
             A.Normalize(mean=0, std=1),
             ToTensorV2()
         ])
@@ -76,7 +75,6 @@ class TransformCfg:
     def set_test_transforms(self) -> A.Compose:
         transform = A.Compose([
             A.Normalize(mean=0, std=1),
-            A.Resize(128, 128),  # del
             ToTensorV2()
         ])
         return transform
