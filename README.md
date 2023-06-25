@@ -24,11 +24,24 @@ Images (from DICOM files) with mammograms from the official dataset are preproce
 3. Install Docker.
 4. Download the dataset from the Kaggle platform using the script ```bash scripts/dataset_download.sh```.
 5. Perform image preprocessing by running ```python src/roi_extraction.py```.
-6. Split data on train, test and validation by ```python src/split_data.py```.
+6. Split data on train, test and validation:
+- by ```python src/split_data.py``` for experiment training;
+- by ```python src/split_data_subm.py``` for Kaggle submission training.
 7. Train the model by running ```python src/train_runner.py --action train```.
 8. Generate predictions on the validation set for all checkpoints from some experiment by running ```python src/train_runner.py --action generate_predictions```.
 9. Select the best checkpoint and the best threshold for classification score by running ```python src/train_runner.py --action check_metric```.
 10. Test the best checkpoint and threshold on the test set by running python ```src/train_runner.py --action test_model``` and specifying the best checkpoint and threshold in the arguments ```--best_epoch``` and ```--best_threshold```.
+
+
+## Results
+The following experiment setting gives 0.35 public LB pF1 score. This score can be further improved by investigating:
+- ensembles of models;
+- usage of external datasets;
+- other types and combinations of augmentations.
+
+## TODO
+This is still WIP. Further improvements:
+- accelerate DICOM processing with GPU.
 
 ## Acknowledgments
 This project was inspired by the following paper:
